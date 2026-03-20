@@ -16,10 +16,10 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Giới thiệu', href: '#about' },
-        { name: 'Kỹ năng', href: '#skills' },
-        { name: 'Dự án', href: '#projects' },
-        { name: 'Liên hệ', href: '#contact' },
+        { name: 'About', href: '#about' },
+        { name: 'Skills', href: '#skills' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'Contact', href: '#contact' },
     ];
 
     return (
@@ -51,7 +51,7 @@ const Navbar = () => {
                             rel="noopener noreferrer"
                             className="bg-primary text-white px-5 py-2 rounded-full hover:bg-blue-600 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20"
                         >
-                            Hồ sơ
+                            Resume
                         </a>
                     </div>
 
@@ -88,7 +88,7 @@ const Navbar = () => {
                                 href={personalInfo.resume}
                                 className="block bg-primary text-white text-center px-5 py-3 rounded-xl"
                             >
-                                Tải CV
+                                Download CV
                             </a>
                         </div>
                     </motion.div>

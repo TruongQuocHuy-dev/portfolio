@@ -60,7 +60,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                                 className="flex items-center gap-2"
                             >
                                 <ArrowLeft size={20} />
-                                <span className="font-medium">Quay lại</span>
+                                <span className="font-medium">Back</span>
                             </motion.div>
                         </button>
                         <button
@@ -116,7 +116,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                                 whileTap={{ scale: 0.95 }}
                                 className="px-6 py-3 glass rounded-full font-bold flex items-center gap-2 hover:bg-white/10 transition-colors shadow-lg"
                             >
-                                <Github size={20} /> Mã nguồn
+                                <Github size={20} /> Source Code
                             </motion.a>
                             <motion.a
                                 href={project.demo}
@@ -146,7 +146,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                                     : 'glass hover:bg-white/5'
                                     }`}
                             >
-                                <ImageIcon size={20} /> Giao diện ({project.screenshots.length})
+                                <ImageIcon size={20} /> Screenshots ({project.screenshots.length})
                             </button>
                             {project.videoUrl && (
                                 <button
@@ -211,7 +211,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                                 <div className="bg-primary/90 backdrop-blur-sm px-6 py-3 rounded-full font-bold flex items-center gap-2 shadow-lg">
-                                                    <Play size={20} /> Nhấn để phóng to
+                                                    <Play size={20} /> Click to zoom
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -289,7 +289,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                         >
                             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <div className="w-2 h-8 bg-primary rounded-full" />
-                                Tính năng chính
+                                Key Features
                             </h3>
                             <ul className="space-y-3">
                                 {project.features.map((feature, idx) => (
@@ -317,7 +317,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                         >
                             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <div className="w-2 h-8 bg-primary rounded-full" />
-                                Công nghệ sử dụng
+                                Tech Stack
                             </h3>
                             <div className="space-y-6">
                                 {['frontend', 'backend', 'tools'].map((category) => (

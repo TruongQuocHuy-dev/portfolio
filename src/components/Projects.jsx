@@ -18,7 +18,7 @@ const Projects = () => {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl font-bold mb-4"
                         >
-                            Dự án <span className="text-primary">Nổi bật</span>
+                            Featured <span className="text-primary">Projects</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
@@ -27,7 +27,7 @@ const Projects = () => {
                             transition={{ delay: 0.1 }}
                             className="text-text-secondary text-lg"
                         >
-                            Xây dựng giải pháp số với trọng tâm là UX và Hiệu suất.
+                            Building digital solutions focused on UX and performance.
                         </motion.p>
                     </div>
                     <motion.a
@@ -39,7 +39,7 @@ const Projects = () => {
                         viewport={{ once: true }}
                         className="hidden md:flex items-center gap-2 text-primary font-bold hover:underline"
                     >
-                        Xem tất cả trên GitHub <ExternalLink size={18} />
+                        View all on GitHub <ExternalLink size={18} />
                     </motion.a>
                 </div>
 

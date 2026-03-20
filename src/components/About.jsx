@@ -6,18 +6,18 @@ const About = () => {
     const values = [
         {
             icon: Target,
-            title: "Mục tiêu nghề nghiệp",
-            description: "Trở thành Senior Frontend Architect, chuyên về ứng dụng web hiệu suất cao và hệ thống thiết kế có khả năng mở rộng."
+            title: "Career Goal",
+            description: "To become a Senior Frontend Architect, specializing in high-performance web applications and scalable design systems."
         },
         {
             icon: Lightbulb,
-            title: "Triết lý",
-            description: "Thiết kế lấy người dùng làm trung tâm kết hợp với sự xuất sắc về kỹ thuật. Tôi tin rằng mỗi dòng code đều góp phần tạo nên trải nghiệm người dùng tốt hơn."
+            title: "Philosophy",
+            description: "User-centered design combined with technical excellence. I believe every line of code contributes to a better user experience."
         },
         {
             icon: Code,
-            title: "Tư duy",
-            description: "Code sạch không chỉ là sở thích; đó là điều cần thiết. Tôi ủng hộ nguyên tắc DRY, tính module hóa và tài liệu toàn diện."
+            title: "Mindset",
+            description: "Clean code is not just a preference; it is essential. I advocate DRY principles, modularity, and comprehensive documentation."
         }
     ];
 
@@ -31,15 +31,15 @@ const About = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                            Một chút về <span className="text-primary">bản thân tôi</span>
+                            A little about <span className="text-primary">myself</span>
                         </h2>
                         <div className="space-y-6 text-text-secondary text-lg leading-relaxed">
                             <p>
-                                Tôi là một Frontend Developer tại Việt Nam, với niềm đam mê sâu sắc trong việc tạo ra những trải nghiệm kỹ thuật số trực quan và đẹp mắt.
-                                Hành trình của tôi bắt đầu từ sự tò mò về cách mọi thứ hoạt động trên web, nhanh chóng phát triển thành sự nghiệp cống hiến để làm chủ công nghệ web hiện đại.
+                                I am a Frontend Developer in Vietnam with a strong passion for creating intuitive and visually engaging digital experiences.
+                                My journey started with curiosity about how things work on the web, and quickly grew into a dedicated career focused on mastering modern web technologies.
                             </p>
                             <p>
-                                Dù là tối ưu hiệu suất render trong React hay tạo UI hoàn hảo từng pixel với Tailwind CSS, tôi luôn tiếp cận mọi thử thách với sự tập trung vào chất lượng và khả năng mở rộng.
+                                Whether optimizing React rendering performance or crafting pixel-perfect interfaces with Tailwind CSS, I approach every challenge with a focus on quality and scalability.
                             </p>
                         </div>
                     </motion.div>

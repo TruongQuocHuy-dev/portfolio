@@ -11,13 +11,13 @@ const Footer = () => {
                     </div>
 
                     <div className="text-text-secondary text-sm">
-                        © {new Date().getFullYear()} {personalInfo.name}. Bảo lưu mọi quyền.
+                        © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
                     </div>
 
                     <div className="flex gap-6 text-sm font-medium">
-                        <a href="#about" className="hover:text-primary transition-colors">Giới thiệu</a>
-                        <a href="#projects" className="hover:text-primary transition-colors">Dự án</a>
-                        <a href="#contact" className="hover:text-primary transition-colors">Liên hệ</a>
+                        <a href="#about" className="hover:text-primary transition-colors">About</a>
+                        <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+                        <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
                     </div>
                 </div>
             </div>

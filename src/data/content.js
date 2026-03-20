@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, ExternalLink, Code2, Layout, Database, Wrench }
 export const personalInfo = {
   name: "Truong Quoc Huy",
   title: "Frontend Developer",
-  bio: "Đam mê xây dựng ứng dụng web hiện đại với trọng tâm là code sạch và trải nghiệm người dùng xuất sắc. Chuyên về hệ sinh thái React và thiết kế responsive.",
+  bio: "Passionate about building modern web applications with a focus on clean code and outstanding user experience. Specialized in the React ecosystem and responsive design.",
   email: "tqhuy.dev.frontend@gmail.com",
   github: "https://github.com/TruongQuocHuy-dev",
   linkedin: "https://www.linkedin.com/in/tqhuy-devfe26/",
@@ -12,17 +12,17 @@ export const personalInfo = {
 
 export const skills = [
   {
-    category: "Giao diện người dùng",
+    category: "User Interface",
     icon: Layout,
     items: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"]
   },
   {
-    category: "Backend & Cơ sở dữ liệu",
+    category: "Backend & Database",
     icon: Database,
     items: ["Node.js", "Express", "MongoDB", "RESTful APIs"]
   },
   {
-    category: "Công cụ & Khác",
+    category: "Tools & Others",
     icon: Wrench,
     items: ["Git", "GitHub", "VS Code", "Figma", "Vite", "Netlify/Vercel"]
   }
@@ -32,20 +32,20 @@ export const projects = [
   {
     id: "bartender-community",
     title: "Bartender Community Ecosystem",
-    description: "Hệ sinh thái mạng xã hội toàn diện cho bartender với tính năng chia sẻ công thức, khám phá cocktail bằng AI (Gemini), thông báo thời gian thực và quản lý thành viên premium.",
+    description: "A comprehensive social ecosystem for bartenders featuring recipe sharing, AI-powered cocktail discovery (Gemini), real-time notifications, and premium membership management.",
     image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop",
     tags: ["React Native", "Node.js", "MongoDB", "Gemini AI"],
     github: "https://github.com/TruongQuocHuy-dev/FE-CommunityBartender",
     demo: "https://github.com/TruongQuocHuy-dev/FE-CommunityBartender",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder - thay bằng video demo thực tế
-    fullDescription: "Một hệ sinh thái hoàn chỉnh cho cộng đồng bartender, bao gồm ứng dụng di động, backend API và trang quản trị. Dự án tích hợp AI Gemini để gợi ý công thức cocktail thông minh, hệ thống thông báo push realtime với OneSignal, và quản lý thành viên premium với nhiều tính năng độc quyền.",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder - replace with actual demo video
+    fullDescription: "A complete ecosystem for the bartender community, including a mobile app, backend API, and admin dashboard. The project integrates Gemini AI for smart cocktail recommendations, real-time push notifications with OneSignal, and premium member management with exclusive features.",
     features: [
-      "Chia sẻ và khám phá công thức cocktail",
-      "AI-powered cocktail suggestions với Gemini",
-      "Hệ thống thông báo realtime",
-      "Quản lý thành viên premium",
-      "Chat cộng đồng",
-      "Upload và quản lý hình ảnh với Cloudinary"
+      "Share and discover cocktail recipes",
+      "AI-powered cocktail suggestions with Gemini",
+      "Real-time notification system",
+      "Premium member management",
+      "Community chat",
+      "Image upload and management with Cloudinary"
     ],
     screenshots: [
       "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=800&auto=format&fit=crop",
@@ -62,18 +62,18 @@ export const projects = [
   {
     id: "ecoconnect",
     title: "EcoConnect Platform",
-    description: "Nền tảng kết nối cộng đồng địa phương với các sáng kiến thân thiện môi trường, xây dựng bằng công nghệ web hiện đại.",
+    description: "A platform connecting local communities with eco-friendly initiatives, built with modern web technologies.",
     image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop",
     tags: ["React", "Tailwind CSS", "Node.js"],
     github: "https://github.com/TruongQuocHuy-dev",
     demo: "https://demo.example.com",
-    fullDescription: "EcoConnect là một nền tảng web kết nối những người quan tâm đến môi trường với các dự án và sáng kiến xanh trong cộng đồng. Ứng dụng cung cấp giao diện trực quan, dễ sử dụng để tìm kiếm và tham gia các hoạt động bảo vệ môi trường.",
+    fullDescription: "EcoConnect is a web platform that connects environmentally conscious people with green projects and initiatives in their communities. The app provides an intuitive, user-friendly interface to discover and join environmental activities.",
     features: [
-      "Tìm kiếm sự kiện môi trường",
-      "Kết nối cộng đồng xanh",
-      "Theo dõi tác động môi trường",
-      "Chia sẻ mẹo sống bền vững",
-      "Bản đồ điểm tái chế"
+      "Search for environmental events",
+      "Connect green communities",
+      "Track environmental impact",
+      "Share sustainable living tips",
+      "Recycling point map"
     ],
     screenshots: [
       "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop",
@@ -89,18 +89,18 @@ export const projects = [
   {
     id: "streamline",
     title: "StreamLine Task Manager",
-    description: "Ứng dụng quản lý công việc tập trung vào thiết kế tối giản và quy trình làm việc trực quan cho các nhóm agile.",
+    description: "A task management app focused on minimal design and intuitive workflows for agile teams.",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000&auto=format&fit=crop",
     tags: ["React", "Redux", "Framer Motion"],
     github: "https://github.com/TruongQuocHuy-dev",
     demo: "https://demo.example.com",
-    fullDescription: "StreamLine là công cụ quản lý dự án hiện đại được thiết kế cho các nhóm làm việc theo phương pháp Agile. Với giao diện kéo-thả trực quan và tích hợp đầy đủ, StreamLine giúp team làm việc hiệu quả hơn.",
+    fullDescription: "StreamLine is a modern project management tool designed for Agile teams. With an intuitive drag-and-drop interface and rich integrations, StreamLine helps teams work more effectively.",
     features: [
-      "Kanban board với drag & drop",
-      "Sprint planning và tracking",
-      "Time tracking tích hợp",
-      "Báo cáo tiến độ realtime",
-      "Tích hợp Slack và email",
+      "Kanban board with drag & drop",
+      "Sprint planning and tracking",
+      "Integrated time tracking",
+      "Real-time progress reports",
+      "Slack and email integrations",
       "Custom workflows"
     ],
     screenshots: [

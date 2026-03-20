@@ -14,7 +14,7 @@ const Skills = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold mb-4"
                     >
-                        Kỹ năng <span className="text-primary">Kỹ thuật</span>
+                        Technical <span className="text-primary">Skills</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Skills = () => {
                         transition={{ delay: 0.1 }}
                         className="text-text-secondary text-lg"
                     >
-                        Bộ công cụ toàn diện cho phát triển web hiện đại.
+                        A complete toolkit for modern web development.
                     </motion.p>
                 </div>
 

@@ -54,14 +54,14 @@ const ProjectCard = ({ project, idx, onClick }) => {
                         onClick={(e) => e.stopPropagation()}
                         className="text-sm font-bold flex items-center gap-2 hover:text-primary transition-colors"
                     >
-                        Demo trực tiếp <ExternalLink size={14} />
+                        Live Demo <ExternalLink size={14} />
                     </a>
                     <a
                         href={project.github}
                         onClick={(e) => e.stopPropagation()}
                         className="text-sm font-bold flex items-center gap-2 text-text-secondary hover:text-white transition-colors"
                     >
-                        Mã nguồn <Github size={14} />
+                        Source Code <Github size={14} />
                     </a>
                 </div>
             </div>
