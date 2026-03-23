@@ -36,7 +36,7 @@ const Hero = () => {
         <section
             ref={sectionRef}
             onMouseMove={handleMouseMove}
-            className="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden bg-black"
+            className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-black"
         >
             {/* Spotlight Effect */}
             <motion.div
@@ -87,12 +87,12 @@ const Hero = () => {
                             </motion.div>
 
                             {/* Updated H1 - Fresher Friendly */}
-                            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black mb-6 tracking-tight leading-[0.95] text-[#d6e1ff]">
-                                Fullstack Developer
+                            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] xl:text-[4.5rem] 2xl:text-[5.2rem] font-black mb-6 tracking-tight leading-[0.95] text-[#d6e1ff]">
+                                <span className="block md:inline lg:whitespace-nowrap">Fullstack Developer</span>
                                 <br />
-                                <span className="text-[#83aefb]">Building Real-World Apps</span>
+                                <span className="text-[#83aefb] block md:inline lg:whitespace-nowrap">Building Real-World Apps</span>
                                 <br />
-                                with React & Node.Js
+                                <span className="block md:inline lg:whitespace-nowrap">with React & Node.Js</span>
                             </h1>
 
                             {/* Updated Intro Text */}
@@ -116,7 +116,7 @@ const Hero = () => {
                                     💻 5+ Projects
                                 </span>
                                 <span className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[#d6e1ff] text-sm font-medium flex items-center gap-2">
-                                    <MapPin size={14} /> Binh Duong
+                                    <MapPin size={14} /> Ho Chi Minh City
                                 </span>
                             </motion.div>
 
@@ -132,6 +132,9 @@ const Hero = () => {
                                 </motion.a>
                                 <motion.a
                                     href={personalInfo.resume}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onContextMenu={(e) => e.preventDefault()}
                                     whileHover={{ scale: 1.04 }}
                                     whileTap={{ scale: 0.96 }}
                                     className="px-8 py-4 bg-[#1a2a52] text-[#d8e5ff] rounded-xl font-bold flex items-center justify-center gap-2 border border-white/10"
@@ -178,15 +181,13 @@ const Hero = () => {
                             >
                                 <div className="aspect-[4/5] rounded-[1.6rem] overflow-hidden bg-slate-800 relative border border-white/10">
                                     {/* Avatar Image filling card */}
-                                    <img
-                                        src="/huy-avatar.jpg"
-                                        alt="Truong Quoc Huy"
-                                        className="absolute inset-0 w-full h-full object-cover bg-slate-700"
-                                        onError={(e) => {
-                                            e.currentTarget.style.display = 'none';
-                                            e.currentTarget.nextElementSibling.style.display = 'flex';
-                                        }}
+                                    <div 
+                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-slate-700 pointer-events-none select-none" 
+                                        style={{ backgroundImage: 'url("/huy-avatar.jpg")' }}
+                                        onContextMenu={(e) => e.preventDefault()}
                                     />
+                                    {/* Protection Overlay */}
+                                    <div className="absolute inset-0 z-10 select-none" onContextMenu={(e) => e.preventDefault()} />
                                     {/* Fallback initials if image fails */}
                                     <div className="absolute inset-0 bg-black/35 backdrop-blur-sm flex items-center justify-center text-6xl font-black text-white/90 hidden">
                                         TQH
@@ -211,7 +212,7 @@ const Hero = () => {
                                             Truong Quoc Huy
                                         </p>
                                         <p className="text-sm text-[#c3d4ff] mt-1">
-                                            Software Engineering • Binh Duong
+                                            Software Engineering • Ho Chi Minh City
                                         </p>
                                     </div>
                                 </div>

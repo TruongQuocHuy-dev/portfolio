@@ -8,7 +8,8 @@ const SkillCard = ({ category, idx }) => {
         purple: { iconBg: "bg-purple-500/10", iconText: "text-purple-400", hoverBorder: "group-hover:border-purple-500/40" },
         orange: { iconBg: "bg-orange-500/10", iconText: "text-orange-400", hoverBorder: "group-hover:border-orange-500/40" },
         sky: { iconBg: "bg-sky-500/10", iconText: "text-sky-400", hoverBorder: "group-hover:border-sky-500/40" },
-        rose: { iconBg: "bg-rose-500/10", iconText: "text-rose-400", hoverBorder: "group-hover:border-rose-500/40" }
+        rose: { iconBg: "bg-rose-500/10", iconText: "text-rose-400", hoverBorder: "group-hover:border-rose-500/40" },
+        indigo: { iconBg: "bg-indigo-500/10", iconText: "text-indigo-400", hoverBorder: "group-hover:border-indigo-500/40" }
     };
     
     const style = colorStyles[category.color] || { iconBg: "bg-primary/10", iconText: "text-primary", hoverBorder: "group-hover:border-primary/50" };

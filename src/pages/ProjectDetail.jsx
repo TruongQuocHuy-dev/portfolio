@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Github, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Play, Image as ImageIcon, Film } from 'lucide-react';
+import { X, Github, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Play, Image as ImageIcon, Film, ChevronDown } from 'lucide-react';
 import { projects } from '../data/content';
 import RevealText from '../components/RevealText';
 
@@ -9,6 +9,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isImageModalOpen, setIsImageModalOpen] = useState(false);
     const [mediaType, setMediaType] = useState('images');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const project = projects.find(p => p.id === projectId);
 
@@ -42,35 +43,35 @@ const ProjectDetail = ({ projectId, onClose }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col"
         >
-            <div className="min-h-screen py-8 px-4">
-                <div className="max-w-6xl mx-auto">
-                    {/* Header */}
-                    <motion.div
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="flex items-center justify-between mb-8"
+            {/* Fixed Header */}
+            <div className="sticky top-0 z-30 bg-background/80 backdrop-blur-md border-b border-white/5 py-4 px-4">
+                <div className="max-w-6xl mx-auto flex items-center justify-between">
+                    <button
+                        onClick={onClose}
+                        className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors group"
                     >
-                        <button
-                            onClick={onClose}
-                            className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors group"
+                        <motion.div
+                            whileHover={{ x: -4 }}
+                            className="flex items-center gap-2"
                         >
-                            <motion.div
-                                whileHover={{ x: -4 }}
-                                className="flex items-center gap-2"
-                            >
-                                <ArrowLeft size={20} />
-                                <span className="font-medium">Back</span>
-                            </motion.div>
-                        </button>
-                        <button
-                            onClick={onClose}
-                            className="p-2 rounded-full hover:bg-white/5 transition-colors"
-                        >
-                            <X size={24} />
-                        </button>
-                    </motion.div>
+                            <ArrowLeft size={20} />
+                            <span className="font-medium">Back</span>
+                        </motion.div>
+                    </button>
+                    <button
+                        onClick={onClose}
+                        className="p-2 rounded-full hover:bg-white/5 transition-colors"
+                    >
+                        <X size={24} />
+                    </button>
+                </div>
+            </div>
+
+            {/* Scrollable Body */}
+            <div className="flex-grow overflow-y-auto">
+                <div className="max-w-6xl mx-auto py-8 px-4">
 
                     {/* Project Title */}
                     <motion.div
@@ -84,7 +85,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                         </h1>
                         <RevealText
                             text={project.fullDescription}
-                            className="text-xl text-text-secondary max-w-3xl leading-relaxed block"
+                            className="text-xl text-text-secondary max-w-3xl leading-relaxed block text-justify"
                             as="p"
                         />
                     </motion.div>
@@ -111,16 +112,58 @@ const ProjectDetail = ({ projectId, onClose }) => {
                             ))}
                         </div>
                         <div className="flex gap-3 ml-auto">
-                            <motion.a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-6 py-3 glass rounded-full font-bold flex items-center gap-2 hover:bg-white/10 transition-colors shadow-lg"
-                            >
-                                <Github size={20} /> Source Code
-                            </motion.a>
+                            {typeof project.github === 'object' ? (
+                                <div className="relative">
+                                    <motion.button
+                                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                        whileHover={{ scale: 1.05, y: -2 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="px-6 py-3 glass rounded-full font-bold flex items-center gap-2 hover:bg-white/10 transition-colors shadow-lg"
+                                    >
+                                        <Github size={20} /> Source Code <ChevronDown size={16} className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                                    </motion.button>
+                                    
+                                    <AnimatePresence>
+                                        {isDropdownOpen && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="absolute right-0 mt-2 w-48 glass rounded-2xl overflow-hidden shadow-2xl z-20 border border-white/10"
+                                            >
+                                                <div className="py-1">
+                                                    {Object.entries(project.github).map(([key, url]) => (
+                                                        <a
+                                                            key={key}
+                                                            href={url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="px-4 py-3 hover:bg-primary/20 flex items-center gap-2 text-sm font-medium transition-colors border-b border-white/5 last:border-b-0"
+                                                        >
+                                                            <Github size={16} />
+                                                            <span className="capitalize">
+                                                                {key === 'app' ? 'App User' : key === 'admin' ? 'Web Admin' : 'Server'}
+                                                            </span>
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            ) : (
+                                <motion.a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-6 py-3 glass rounded-full font-bold flex items-center gap-2 hover:bg-white/10 transition-colors shadow-lg"
+                                >
+                                    <Github size={20} /> Source Code
+                                </motion.a>
+                            )}
                             <motion.a
                                 href={project.demo}
                                 target="_blank"

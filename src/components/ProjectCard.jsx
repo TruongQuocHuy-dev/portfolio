@@ -4,6 +4,10 @@ import { Github, ExternalLink } from 'lucide-react';
 import RevealText from './RevealText';
 
 const ProjectCard = ({ project, idx, onClick }) => {
+    const githubUrl = typeof project.github === 'object' 
+        ? project.github.app || project.github.server || Object.values(project.github)[0] 
+        : project.github;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -21,7 +25,7 @@ const ProjectCard = ({ project, idx, onClick }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <a
-                        href={project.github}
+                        href={githubUrl}
                         onClick={(e) => e.stopPropagation()}
                         className="bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-white/20 transition-colors"
                     >
@@ -60,7 +64,7 @@ const ProjectCard = ({ project, idx, onClick }) => {
                         Live Demo <ExternalLink size={14} />
                     </a>
                     <a
-                        href={project.github}
+                        href={githubUrl}
                         onClick={(e) => e.stopPropagation()}
                         className="text-sm font-bold flex items-center gap-2 text-text-secondary hover:text-white transition-colors"
                     >

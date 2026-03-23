@@ -49,6 +49,7 @@ const Navbar = () => {
                             href={personalInfo.resume}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onContextMenu={(e) => e.preventDefault()}
                             className="bg-primary text-white px-5 py-2 rounded-full hover:bg-blue-600 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20"
                         >
                             Resume

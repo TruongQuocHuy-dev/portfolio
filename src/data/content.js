@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Layout, Database, Wrench, Smartphone, Code, Cloud, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, Layout, Database, Wrench, Smartphone, Code, Cloud, Globe, Server } from 'lucide-react';
 
 export const personalInfo = {
   name: "Truong Quoc Huy",
@@ -12,40 +12,46 @@ export const personalInfo = {
 
 export const skills = [
   {
-    category: "Languages",
+    category: "Frontend",
     icon: Code,
     color: "cyan",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript"]
+    items: [
+      "HTML", "CSS", "JavaScript", "TypeScript",
+      "React.js"
+    ]
+  },
+  {
+    category: "Backend",
+    icon: Server,
+    color: "purple",
+    items: [
+      "Node.js", "Express.js",
+      "JWT Auth", "Google OAuth 2.0"
+    ]
+  },
+  {
+    category: "Mobile",
+    icon: Smartphone,
+    color: "indigo",
+    items: ["React Native", "Expo"]
   },
   {
     category: "Databases",
     icon: Database,
     color: "emerald",
-    items: ["SQL Server", "MongoDB"]
-  },
-  {
-    category: "Frameworks",
-    icon: Globe,
-    color: "purple",
-    items: ["React.js", "React Native", "Express.js", "Nest.js"]
+    items: ["MongoDB", "SQL Server"]
   },
   {
     category: "Tools",
     icon: Wrench,
     color: "orange",
-    items: ["GitHub", "Postman"]
+    items: ["Git", "GitHub", "Postman"]
   },
   {
-    category: "Cloud Services",
+    category: "Cloud",
     icon: Cloud,
     color: "sky",
-    items: ["Vercel", "Render", "Cloudinary"]
-  },
-  {
-    category: "Web Technologies",
-    icon: Globe,
-    color: "rose",
-    items: ["RESTful API", "JWT Auth"]
+    items: ["Vercel", "Cloudinary"]
   }
 ];
 
@@ -56,13 +62,17 @@ export const projects = [
     description: "A comprehensive social ecosystem for bartenders featuring recipe sharing, AI-powered cocktail discovery, real-time notifications, and premium membership management.",
     image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop",
     tags: ["React Native", "React (Admin)", "Node.js", "Gemini AI"],
-    github: "https://github.com/TruongQuocHuy-dev",
-    demo: "https://github.com/TruongQuocHuy-dev",
+    github: {
+      server: "https://github.com/TruongQuocHuy-dev/BARTENDER-COMMUNITY_BE",
+      admin: "https://github.com/TruongQuocHuy-dev/BARTENDER-COMMUNITY_ADMIN",
+      app: "https://github.com/TruongQuocHuy-dev/FE-CommunityBartender"
+    },
+    demo: "https://bartender-community-admin.vercel.app",
     fullDescription: "A complete ecosystem for the bartender community, including a mobile app for users, a web-based admin dashboard for management, and a backend API. The project integrates Gemini AI for smart cocktail recommendations, real-time push notifications with OneSignal, and premium member management with exclusive features.",
     features: [
       "Share and discover bartender recipes",
       "AI-powered cocktail suggestions with Gemini",
-      "Real-time notification system (OneSignal)",
+      "Real-time notification system",
       "Premium member subscription & management",
       "Community chat & social features",
       "Web Admin Dashboard for content moderation"
@@ -83,7 +93,11 @@ export const projects = [
     description: "A full-stack e-commerce solution with a customer mobile app, a web-based admin dashboard for inventory management, and a secure backend API.",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop",
     tags: ["React Native", "React (Admin)", "Node.js", "PostgreSQL"],
-    github: "https://github.com/TruongQuocHuy-dev",
+    github: {
+      server: "https://github.com/TruongQuocHuy-dev/ecommerce-server",
+      admin: "https://github.com/TruongQuocHuy-dev/ecommerce-admin",
+      app: "https://github.com/TruongQuocHuy-dev/ecommerce-app"
+    },
     demo: "https://github.com/TruongQuocHuy-dev",
     fullDescription: "A comprehensive e-commerce platform designed for modern retail. It features a React Native shopping app for customers to browse, order, and track items, and a React-based Admin Dashboard for sellers to manage products, inventory, and view sales analytics.",
     features: [
@@ -110,7 +124,10 @@ export const projects = [
     description: "A modern dating application focusing on real-time interactions, smooth card swipe matchmaking, and an interactive vibe-based profile setup.",
     image: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=1000&auto=format&fit=crop",
     tags: ["React Native", "Node.js", "Socket.io", "Clean Architecture"],
-    github: "https://github.com/TruongQuocHuy-dev",
+    github: {
+      server: "https://github.com/TruongQuocHuy-dev/vibecheck-server",
+      app: "https://github.com/TruongQuocHuy-dev/VibeCheck-mobile"
+    },
     demo: "https://github.com/TruongQuocHuy-dev",
     fullDescription: "VibeCheck is a dating application designed for smooth and responsive user interactions. Built adhering to Clean Architecture principles for maximum maintainability. It features card swipe matchmaking, real-time messaging, and profile customization with high focus on performance.",
     features: [
@@ -137,8 +154,8 @@ export const projects = [
     description: "A modern, interactive portfolio website showcasing my projects and skills with a sleek UI and smooth animations. (This Project)",
     image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop",
     tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    github: "https://github.com/TruongQuocHuy-dev",
-    demo: "https://github.com/TruongQuocHuy-dev",
+    github: "https://github.com/TruongQuocHuy-dev/portfolio",
+    demo: "https://quochuy-dev.vercel.app/",
     fullDescription: "A highly interactive portfolio built with React and Tailwind CSS. It uses Framer Motion for smooth transitions, background effects, and engaging hover states to provide an immersive visitor experience.",
     features: [
       "Sleek Bento-Grid design for About/Skills",

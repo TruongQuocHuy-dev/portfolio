@@ -36,7 +36,7 @@ const About = () => {
                     >
                         <div className="space-y-4 text-text-secondary leading-relaxed">
                             <RevealText
-                                text="👋 Hi, I'm Huy — a Software Engineering student at Thủ Dầu Một University, passionate about building clean web apps with React & Node.js."
+                                text="👋 Hi, I'm Huy — a Software Engineering student at Thu Dau Mot University, passionate about building clean web apps with React & Node.js."
                                 as="p"
                                 className="text-lg text-[#d6e1ff] block"
                             />
@@ -47,7 +47,7 @@ const About = () => {
                                 className="text-lg text-[#d6e1ff] block"
                             />
                             <RevealText
-                                text="🎯 Open to Junior Frontend/Full-Stack roles • Available for internships & full-time • Binh Duong or Remote"
+                                text="🎯 Open to Junior Frontend/Full-Stack roles • Available for internships & full-time • Ho Chi Minh City or Remote"
                                 as="p"
                                 delay={0.4}
                                 className="text-lg text-primary font-bold block"
@@ -58,7 +58,7 @@ const About = () => {
                         <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center gap-3">
                             <GraduationCap className="text-primary" size={20} />
                             <span className="font-heading text-sm text-white font-medium">
-                                Thủ Dầu Một University
+                                Thu Dau Mot University
                             </span>
                             <span className="text-sm text-text-secondary">•</span>
                             <span className="font-mono text-sm text-text-secondary">

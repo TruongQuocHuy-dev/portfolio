@@ -8,8 +8,8 @@ const RevealText = ({ text, delay = 0, speed = 0.015, className = '', as: Compon
 
     if (!text) return null;
 
-    const characters = Array.from(String(text));
-
+    const words = String(text).split(' ');
+    
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -38,14 +38,19 @@ const RevealText = ({ text, delay = 0, speed = 0.015, className = '', as: Compon
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
             >
-                {characters.map((char, index) => (
-                    <motion.span
-                        key={index}
-                        variants={charVariants}
-                        className="inline-block whitespace-pre"
-                    >
-                        {char}
-                    </motion.span>
+                {words.map((word, wIndex) => (
+                    <span key={wIndex} className="inline-block whitespace-nowrap">
+                        {Array.from(word).map((char, cIndex) => (
+                            <motion.span
+                                key={cIndex}
+                                variants={charVariants}
+                                className="inline-block"
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                        {wIndex < words.length - 1 && <span className="inline-block">&nbsp;</span>}
+                    </span>
                 ))}
             </motion.span>
         </Component>
