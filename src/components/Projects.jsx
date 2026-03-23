@@ -4,11 +4,12 @@ import { ExternalLink } from 'lucide-react';
 import { projects } from '../data/content';
 import ProjectDetail from '../pages/ProjectDetail';
 import ProjectCard from './ProjectCard';
+import RevealText from './RevealText';
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     return (
-        <section id="projects" className="py-24 bg-surface/30">
+        <section id="projects" className="py-12 bg-surface/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-end mb-16 px-4">
                     <div>
@@ -16,19 +17,16 @@ const Projects = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-bold mb-4"
+                            className="font-heading text-4xl md:text-5xl font-bold mb-4"
                         >
                             Featured <span className="text-primary">Projects</span>
                         </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
+                        <RevealText
+                            text="Building digital solutions focused on UX and performance."
                             className="text-text-secondary text-lg"
-                        >
-                            Building digital solutions focused on UX and performance.
-                        </motion.p>
+                            as="p"
+                            delay={0.1}
+                        />
                     </div>
                     <motion.a
                         href="https://github.com/TruongQuocHuy-dev"

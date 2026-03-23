@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
+import RevealText from './RevealText';
 
 const ProjectCard = ({ project, idx, onClick }) => {
     return (
@@ -8,7 +9,7 @@ const ProjectCard = ({ project, idx, onClick }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
+            transition={{ delay: idx * 0.05 }}
             onClick={onClick}
             className="group glass rounded-3xl overflow-hidden flex flex-col h-full cursor-pointer"
         >
@@ -39,15 +40,17 @@ const ProjectCard = ({ project, idx, onClick }) => {
             <div className="p-8 flex flex-col flex-grow">
                 <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
-                        <span key={i} className="text-[10px] uppercase tracking-wider font-bold text-primary/80 bg-primary/10 px-2 py-1 rounded">
+                        <span key={i} className="font-mono text-[10px] uppercase tracking-wider font-bold text-primary/80 bg-primary/10 px-2 py-1 rounded">
                             {tag}
                         </span>
                     ))}
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                </p>
+                <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                <RevealText
+                    text={project.description}
+                    className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow block"
+                    as="p"
+                />
                 <div className="pt-6 border-t border-white/5 flex items-center justify-between mt-auto">
                     <a
                         href={project.demo}

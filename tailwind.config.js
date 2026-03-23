@@ -17,6 +17,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        heading: ['Outfit', 'sans-serif'],
+        mono: ['"Space Grotesk"', 'monospace'],
       },
       backdropBlur: {
         xs: '2px',

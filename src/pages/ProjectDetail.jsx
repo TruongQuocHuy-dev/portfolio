@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Github, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Play, Image as ImageIcon, Film } from 'lucide-react';
 import { projects } from '../data/content';
+import RevealText from '../components/RevealText';
 
 const ProjectDetail = ({ projectId, onClose }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -78,12 +79,14 @@ const ProjectDetail = ({ projectId, onClose }) => {
                         transition={{ delay: 0.1 }}
                         className="mb-8"
                     >
-                        <h1 className="text-4xl md:text-6xl font-black mb-4 gradient-text">
+                        <h1 className="font-heading text-4xl md:text-6xl font-black mb-4 gradient-text">
                             {project.title}
                         </h1>
-                        <p className="text-xl text-text-secondary max-w-3xl leading-relaxed">
-                            {project.fullDescription}
-                        </p>
+                        <RevealText
+                            text={project.fullDescription}
+                            className="text-xl text-text-secondary max-w-3xl leading-relaxed block"
+                            as="p"
+                        />
                     </motion.div>
 
                     {/* Tags & Links */}
@@ -101,7 +104,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                                     animate={{ scale: 1 }}
                                     transition={{ delay: 0.3 + idx * 0.05 }}
                                     whileHover={{ scale: 1.05 }}
-                                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold border border-primary/20 hover:bg-primary/20 transition-all cursor-default"
+                                    className="font-mono px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold border border-primary/20 hover:bg-primary/20 transition-all cursor-default"
                                 >
                                     {tag}
                                 </motion.span>
@@ -241,7 +244,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
 
                                     {/* Image Counter */}
                                     {!isImageModalOpen && (
-                                        <div className="absolute bottom-4 right-4 px-5 py-2 rounded-full bg-black/70 backdrop-blur-md text-sm font-bold shadow-lg border border-white/10">
+                                        <div className="font-mono absolute bottom-4 right-4 px-5 py-2 rounded-full bg-black/70 backdrop-blur-md text-sm font-bold shadow-lg border border-white/10">
                                             {currentImageIndex + 1} / {project.screenshots.length}
                                         </div>
                                     )}
@@ -287,7 +290,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                             transition={{ delay: 0.4 }}
                             className="glass p-8 rounded-3xl hover:bg-white/5 transition-colors"
                         >
-                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <h3 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
                                 <div className="w-2 h-8 bg-primary rounded-full" />
                                 Key Features
                             </h3>
@@ -315,7 +318,7 @@ const ProjectDetail = ({ projectId, onClose }) => {
                             transition={{ delay: 0.4 }}
                             className="glass p-8 rounded-3xl hover:bg-white/5 transition-colors"
                         >
-                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <h3 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
                                 <div className="w-2 h-8 bg-primary rounded-full" />
                                 Tech Stack
                             </h3>

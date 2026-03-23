@@ -7,7 +7,7 @@ import Contact from '../components/Contact';
 
 const Home = () => {
     return (
-        <main>
+        <main className="divide-y divide-white/10">
             <Hero />
             <About />
             <Skills />
